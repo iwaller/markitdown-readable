@@ -1,0 +1,20 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Local editor and OS files
+.DS_Store
+.idea/
+.vscode/
+.ropeproject/
+
+# Local sample inputs and generated outputs
+files/
+results/
