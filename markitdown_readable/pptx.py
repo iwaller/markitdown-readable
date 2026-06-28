@@ -32,7 +32,7 @@ ACCEPTED_MIME_TYPE_PREFIXES = [
 ACCEPTED_FILE_EXTENSIONS = [".pptx"]
 
 
-class LlmPptxConverter(DocumentConverter):
+class ReadablePptxConverter(DocumentConverter):
     """
     Converts PPTX files to Markdown. Supports heading, tables and images with alt text.
     """

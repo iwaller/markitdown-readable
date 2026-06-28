@@ -24,6 +24,6 @@ results/<filename>_<ext>/images/
 
 ## Converters
 
-- `llm_docx_markitdown`: DOCX to Markdown with Word structure handling.
-- `llm_pdf_markitdown`: PDF text extraction plus image index output.
-- `llm_pptx_markitdown`: PPTX slide, table, chart, text, and image extraction.
+- `markitdown_readable.docx`: DOCX to Markdown with Word structure handling.
+- `markitdown_readable.pdf`: PDF text extraction plus image index output.
+- `markitdown_readable.pptx`: PPTX slide, table, chart, text, and image extraction.

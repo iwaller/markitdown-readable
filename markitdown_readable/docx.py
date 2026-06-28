@@ -120,9 +120,9 @@ class RunToken:
     strike: bool = False
 
 
-class LlmDocxConverter(DocumentConverter):
+class ReadableDocxConverter(DocumentConverter):
     """
-    Converts DOCX files to Markdown while preserving LLM-relevant Word semantics.
+    Converts DOCX files to Markdown while preserving readable Word semantics.
     """
 
     def accepts(
@@ -160,7 +160,7 @@ class LlmDocxConverter(DocumentConverter):
             except Exception:
                 pass
 
-        markdown = DocxLlmMarkdownBuilder(
+        markdown = ReadableDocxMarkdownBuilder(
             data,
             image_output_dir=kwargs.get("image_output_dir"),
             image_output_prefix=kwargs.get("image_output_prefix", "./images"),
@@ -168,7 +168,7 @@ class LlmDocxConverter(DocumentConverter):
         return DocumentConverterResult(markdown=markdown)
 
 
-class DocxLlmMarkdownBuilder:
+class ReadableDocxMarkdownBuilder:
     def __init__(
         self,
         data: bytes,
@@ -675,7 +675,7 @@ class DocxLlmMarkdownBuilder:
             return 1
 
         # Tables with duplicated top-level header labels usually came from merged
-        # Word headers and are better flattened for LLM consumption.
+        # Word headers and are better flattened for downstream consumption.
         first = matrix[0]
         non_empty = [cell for cell in first if cell]
         if len(non_empty) != len(set(non_empty)):

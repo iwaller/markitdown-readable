@@ -25,7 +25,7 @@ ACCEPTED_MIME_TYPE_PREFIXES = [
 ACCEPTED_FILE_EXTENSIONS = [".pdf"]
 
 
-class LlmPdfConverter(DocumentConverter):
+class ReadablePdfConverter(DocumentConverter):
     """
     Converts PDFs to Markdown text and appends page-level image references.
     """

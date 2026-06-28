@@ -3,9 +3,11 @@ import re
 import shutil
 from pathlib import Path
 from markitdown import MarkItDown
-from llm_docx_markitdown import LlmDocxConverter
-from llm_pdf_markitdown import LlmPdfConverter
-from llm_pptx_markitdown import LlmPptxConverter
+from markitdown_readable import (
+    ReadableDocxConverter,
+    ReadablePdfConverter,
+    ReadablePptxConverter,
+)
 
 
 def extract_images_from_pptx(file_path, output_dir):
@@ -198,9 +200,9 @@ def process_document(file_path):
 
     # Convert to markdown using MarkItDown
     md = MarkItDown(enable_plugins=False)
-    md.register_converter(LlmDocxConverter(), priority=-1)
-    md.register_converter(LlmPdfConverter(), priority=-1)
-    md.register_converter(LlmPptxConverter(), priority=-1)
+    md.register_converter(ReadableDocxConverter(), priority=-1)
+    md.register_converter(ReadablePdfConverter(), priority=-1)
+    md.register_converter(ReadablePptxConverter(), priority=-1)
     convert_kwargs = {}
     if file_ext in ['docx', 'pdf', 'pptx']:
         convert_kwargs["image_output_dir"] = str(images_dir)
