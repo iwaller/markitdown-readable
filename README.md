@@ -27,3 +27,7 @@ results/<filename>_<ext>/images/
 - `markitdown_readable.docx`: DOCX to Markdown with Word structure handling.
 - `markitdown_readable.pdf`: PDF text extraction plus image index output.
 - `markitdown_readable.pptx`: PPTX slide, table, chart, text, and image extraction.
+
+## 文档
+
+- [DOCX 转可读 Markdown 方案](docs/docx-to-readable-markdown.md)
